@@ -1,3 +1,10 @@
 .form-container{
-    width:100%;
+    width:30%;
+    position: absolute;
+    top:20%;
+    left: 30%;
+    background-color: red;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow:0 2px 2px rgb(15, 15, 15);
 }

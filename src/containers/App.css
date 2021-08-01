@@ -9,16 +9,7 @@
   float: left;
   display: inline-block;
 }
-.add-contact{
-  position: absolute;
- background-color: orangered;
- padding: 20px;
- width: 30%;
- top: 20%;
- left:30%;
- box-shadow: 0 3px 2.5px #364353;
 
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -32,12 +23,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.contactList{
-  width:45%;
-  position: absolute;
-  top: 55%;
-  left: 25%;
-}
+
 
 @keyframes App-logo-spin {
   from {
