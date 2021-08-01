@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 function ContactCard(props) {
     const [open, setOpen] = React.useState(false)
     const{id, name, email } = props.contact;
-    // console.log(props.contact)
+
+    console.log(props.contact)
     // console.log(props.contact.name);
     // console.log(props.contact.email);
     const style = {
@@ -67,9 +69,13 @@ function ContactCard(props) {
                         class="ui red button"
                         onClick = {() =>props.removeContact(id)}
                         >delete</button> */}
-                        </div><img src="https://react.semantic-ui.com/images/avatar/small/lena.png" class="ui avatar image"/>
+                        </div>
+                       
+                        <img src="https://react.semantic-ui.com/images/avatar/small/lena.png" class="ui avatar image"/>
                         <div class="content">{name}</div>
+                        <Link to={{pathname:`/ContactDetail/${id}`, state:{contacts: props.contact}}}>    
                         <a href="#" style={emailStyle} >{email}</a>
+                        </Link>
                     </div>
             </div>
             {/* <div role="list" class="ui divided middle aligned list" style={style}>

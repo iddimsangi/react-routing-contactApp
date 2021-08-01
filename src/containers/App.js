@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from '../components/Header/Header'
 import AddContact from '../containers/AddContact/AddContact'
 import ContactsList from '../components/ContactsList/ContactsList'
+import ContactDetails from '../components/ContactDetails/ContactDetails'
 import './App.css';
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
                  <Route path="/AddContact" render={(props) =>(
                  <AddContact {...props} addContactHandler={addContact}/>
                 )} />
+                <Route path="/ContactDetail" component={ContactDetails}/>
+                  
             </Switch>
            
           </Router>
