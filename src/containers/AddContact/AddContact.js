@@ -18,6 +18,8 @@ export class AddContact extends Component {
             name:"",
             email:""
         })
+        console.log(this.props);
+        this.props.history.push("/");
         this.props.addContactHandler(this.state);
     }
     render() {
