@@ -1,0 +1,17 @@
+.navs{
+    text-align: center;
+    border: 1px solid orange;
+    padding: 10px;
+  }
+  nav{
+    position: relative;
+  }
+  .navs{
+    position: absolute;
+    width: 70%;
+    left:15%;
+  }
+  .navs h1{
+    text-transform: uppercase;
+    display: inline-block;
+  }
