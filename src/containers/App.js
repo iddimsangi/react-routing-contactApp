@@ -12,8 +12,16 @@ function App() {
   const[contacts, setContacts] = useState([]);
   const LOCAL_STORAGE_KEY = 'contacts';
  const addContact = (contact) => {
+   const request = {
+     id:uuid(),
+     ...contact
+   }
+   axios.post("http://localhost:3006/contacts", request).then(resp =>{
+     const reqVal = resp.data
+    setContacts([...contacts, reqVal])
+   })
   // console.log(contact)
-  setContacts([...contacts, {id:uuid(), ...contact}])
+  // setContacts([...contacts, {id:uuid(), ...contact}])
 
   }
   const deleteContact = (id) =>{
