@@ -25,6 +25,7 @@ function App() {
 
   }
   const deleteContact = (id) =>{
+    axios.delete(`http://localhost:3006/contacts/${id}`);
     const contactsRemained = contacts.filter(contact =>{
       return contact.id !== id
     })
