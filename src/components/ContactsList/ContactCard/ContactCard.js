@@ -5,7 +5,7 @@ function ContactCard(props) {
     const [open, setOpen] = React.useState(false)
     const{id, name, email } = props.contact;
 
-    console.log(props.contact)
+    console.log(props.contact);
     // console.log(props.contact.name);
     // console.log(props.contact.email);
     const style = {

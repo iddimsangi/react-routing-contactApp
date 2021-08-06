@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import { uuid } from 'uuidv4'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from '../components/Header/Header'
+import axios from 'axios';
 import AddContact from '../containers/AddContact/AddContact'
 import ContactsList from '../components/ContactsList/ContactsList'
 import ContactDetails from '../components/ContactDetails/ContactDetails'
@@ -23,13 +24,19 @@ function App() {
   }
   //GET THE CONTACT FROM LOCAL STORAGE
   useEffect(() => {
-  const retrievedContact = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts)))
-  if(retrievedContact) setContacts(retrievedContact)
+  axios.get("http://localhost:3006/contacts").then(response =>{
+      const receivedData = response.data;
+      console.log(receivedData);
+      if(receivedData) setContacts(receivedData);
+    })
+  // const retrievedContact = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts)))
+  // if(retrievedContact) setContacts(retrievedContact);
+
   },[])
 
   //ADD CONTACT TO LOCAL STORAGE
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
+    // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
   },[contacts])
   // const contacts = [
   //   {
